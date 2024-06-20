@@ -1,0 +1,56 @@
+
+run_config: 
+  name: random-forest-featset-1
+  author: Omar Shatrat
+  version: default
+  description: Classifies clouds into one of two types.
+  dependencies: requirements.txt
+  data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/taylor/cloud.data
+  column_names: ['visible_mean', 'visible_max', 'visible_min', 
+           'visible_mean_distribution', 'visible_contrast', 
+           'visible_entropy', 'visible_second_angular_momentum', 
+           'IR_mean', 'IR_max', 'IR_min']
+
+generate_features: 
+  calculate_norm_range:
+    min_col: IR_min
+    max_col: IR_max
+    mean_col: IR_mean
+  log_transform: 
+    log_entropy: visible_entropy
+  multiply:  
+    col_a: visible_contrast
+    col_b: visible_entropy
+
+aws: 
+  upload: True
+  bucket_name: rpi0559-test
+  prefix: experiments
+
+
+font: 
+  size: 16
+
+  
+axes: 
+  prop_cycle: ['#0085ca', '#888b8d', '#00c389', '#f4364c', '#e56db1']
+  label_size: 20
+  label_color: '#677385'
+  title_size: 20
+
+xtick: 
+  label_size: 14
+ytick: 
+  label_size: 14
+
+figure: 
+  width: 12.0
+  height: 8.0
+
+lines: 
+  line_width: 3
+  line_color: '#0055A7'
+
+text: 
+  color: '#677385'
+
