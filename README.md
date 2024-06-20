@@ -31,8 +31,8 @@ These instructions were developed using Windows 11 Pro and PowerShell. Attempts 
 To clone this repository and start working with it, run the following command:
 
 ```bash
-git clone https://github.com/MSIA/rpi0559_hw2.git
-cd rpi0559_hw2
+git clone [https://github.com/MSIA/rpi0559_hw2](https://github.com/omarshatrat/cloud_classifier_docker).git
+cd cloud_classifier_docker
 ```
 
 
